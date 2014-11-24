@@ -1,6 +1,8 @@
-<?php
+<?php 
 
-class OAuthConsumer {
+namespace GlenScott\OAuth;
+
+class Consumer {
   public $key;
   public $secret;
 

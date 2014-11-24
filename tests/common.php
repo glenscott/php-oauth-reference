@@ -1,7 +1,5 @@
 <?php
 
-require dirname(__FILE__).'/../OAuth.php';
-
 /**
  * A simple utils class for methods needed
  * during some of the tests
