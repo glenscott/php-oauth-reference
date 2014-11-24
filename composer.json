@@ -1,0 +1,21 @@
+{
+	"name": "glenscott/oauth",
+	"description": "oAuth 1.0a server",
+	"license": "MIT",
+	"keywords": ["oauth"],
+	"authors": [
+		{
+			"name": "Glen Scott",
+			"email": "glen@glenscott.co.uk"
+		}
+	],
+	"require": {},
+	"require-dev": {
+		"phpunit/phpunit": "4.0.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"GlenScott\\OAuth": "src"
+		}
+	}
+}
