@@ -1,18 +1,22 @@
 <?php
 
+use GlenScott\OAuth\DataStore;
+use GlenScott\OAuth\Consumer;
+use GlenScott\OAuth\Token;
+
 /**
  * A mock store for testing
  */
-class Mock_OAuthDataStore extends OAuthDataStore {
+class Mock_OAuthDataStore extends DataStore {
 	private $consumer;
 	private $request_token;
 	private $access_token;
 	private $nonce;
 
 	function __construct() {
-		$this->consumer = new OAuthConsumer("key", "secret", NULL);
-		$this->request_token = new OAuthToken("requestkey", "requestsecret", 1);
-		$this->access_token = new OAuthToken("accesskey", "accesssecret", 1);
+		$this->consumer = new Consumer("key", "secret", NULL);
+		$this->request_token = new Token("requestkey", "requestsecret", 1);
+		$this->access_token = new Token("accesskey", "accesssecret", 1);
 		$this->nonce = "nonce";
 	}
 

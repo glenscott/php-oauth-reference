@@ -1,6 +1,8 @@
 <?php
 
-class OAuthDataStore {
+namespace GlenScott\OAuth;
+
+class DataStore {
   function lookup_consumer($consumer_key) {
     // implement me
   }
