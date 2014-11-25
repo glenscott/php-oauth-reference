@@ -1,5 +1,7 @@
 <?php
 
+use GlenScott\OAuth\Request;
+
 /**
  * A simple utils class for methods needed
  * during some of the tests
@@ -48,7 +50,7 @@ class OAuthTestUtils {
 		if( $method == 'POST' ) {
 			$_SERVER['HTTP_CONTENT_TYPE'] = 'application/x-www-form-urlencoded';
 			$_POST = parse_str($post_data);
-			OAuthRequest::$POST_INPUT = 'data:application/x-www-form-urlencoded,'.$post_data;
+			Request::$POST_INPUT = 'data:application/x-www-form-urlencoded,'.$post_data;
 		}	
 			
 		if( $auth_header != '' ) {

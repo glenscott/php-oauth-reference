@@ -1,5 +1,7 @@
 <?php
 
+namespace GlenScott\OAuth;
+
 /**
  * The RSA-SHA1 signature method uses the RSASSA-PKCS1-v1_5 signature algorithm as defined in 
  * [RFC3447] section 8.2 (more simply known as PKCS#1), using SHA-1 as the hash function for 
@@ -8,7 +10,7 @@
  * specification.
  *   - Chapter 9.3 ("RSA-SHA1")
  */
-abstract class OAuthSignatureMethod_RSA_SHA1 extends OAuthSignatureMethod {
+abstract class SignatureMethod_RSA_SHA1 extends OAuthSignatureMethod {
   public function get_name() {
     return "RSA-SHA1";
   }

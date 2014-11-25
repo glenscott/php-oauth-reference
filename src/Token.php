@@ -1,6 +1,8 @@
 <?php
 
-class OAuthToken {
+namespace GlenScott\OAuth;
+
+class Token {
   // access tokens and request tokens
   public $key;
   public $secret;

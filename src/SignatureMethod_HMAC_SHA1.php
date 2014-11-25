@@ -1,5 +1,7 @@
 <?php
 
+namespace GlenScott\OAuth;
+
 /**
  * The HMAC-SHA1 signature method uses the HMAC-SHA1 signature algorithm as defined in [RFC2104] 
  * where the Signature Base String is the text and the key is the concatenated values (each first 
@@ -7,7 +9,7 @@
  * character (ASCII code 38) even if empty.
  *   - Chapter 9.2 ("HMAC-SHA1")
  */
-class OAuthSignatureMethod_HMAC_SHA1 extends OAuthSignatureMethod {
+class SignatureMethod_HMAC_SHA1 extends SignatureMethod {
   function get_name() {
     return "HMAC-SHA1";
   }
@@ -21,7 +23,7 @@ class OAuthSignatureMethod_HMAC_SHA1 extends OAuthSignatureMethod {
       ($token) ? $token->secret : ""
     );
 
-    $key_parts = OAuthUtil::urlencode_rfc3986($key_parts);
+    $key_parts = Util::urlencode_rfc3986($key_parts);
     $key = implode('&', $key_parts);
 
     return base64_encode(hash_hmac('sha1', $base_string, $key, true));
