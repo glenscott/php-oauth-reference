@@ -10,7 +10,7 @@ namespace GlenScott\OAuth;
  * specification.
  *   - Chapter 9.3 ("RSA-SHA1")
  */
-abstract class SignatureMethod_RSA_SHA1 extends OAuthSignatureMethod {
+abstract class SignatureMethod_RSA_SHA1 extends SignatureMethod {
   public function get_name() {
     return "RSA-SHA1";
   }
