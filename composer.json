@@ -7,6 +7,18 @@
 		{
 			"name": "Glen Scott",
 			"email": "glen@glenscott.co.uk"
+		},
+		{
+			"name": "Andy Smith",
+			"email": "github_public@anarkystic.com"
+		},
+		{
+			"name": "Morten Fangel",
+			"email": "fangel@sevengoslings.net"
+		},
+		{
+			"name": "Bruno Pedro",
+			"email": "github@brunopedro.com"
 		}
 	],
 	"require": {},
