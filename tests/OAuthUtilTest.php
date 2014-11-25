@@ -18,11 +18,8 @@ class OAuthUtilTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('%0A',       Util::urlencode_rfc3986("\n"));
 		$this->assertEquals('%20',       Util::urlencode_rfc3986(' '));
 		$this->assertEquals('%7F',       Util::urlencode_rfc3986("\x7F"));
-		//$this->assertEquals('%C2%80',    Util::urlencode_rfc3986("\x00\x80"));
-		//$this->assertEquals('%E3%80%81', Util::urlencode_rfc3986("\x30\x01"));
-		
-		// Last two checks disabled because of lack of UTF-8 support, or lack
-		// of knowledge from me (morten.fangel) on how to use it properly..
+		$this->assertEquals('%C2%80',    Util::urlencode_rfc3986(json_decode("\"\u0080\"")));
+		$this->assertEquals('%E3%80%81', Util::urlencode_rfc3986(json_decode("\"\u3001\"")));
 		
 		// A few tests to ensure code-coverage
 		$this->assertEquals( '', Util::urlencode_rfc3986(NULL));
@@ -39,11 +36,8 @@ class OAuthUtilTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals("\n",        Util::urldecode_rfc3986('%0A'));
 		$this->assertEquals(' ',         Util::urldecode_rfc3986('%20'));
 		$this->assertEquals("\x7F",      Util::urldecode_rfc3986('%7F'));
-		//$this->assertEquals("\x00\x80",  Util::urldecode_rfc3986('%C2%80'));
-		//$this->assertEquals("\x30\x01",  Util::urldecode_rfc3986('%E3%80%81'));
-		
-		// Last two checks disabled because of lack of UTF-8 support, or lack
-		// of knowledge from me (morten.fangel) on how to use it properly..
+		$this->assertEquals(json_decode("\"\u0080\""),  Util::urldecode_rfc3986('%C2%80'));
+		$this->assertEquals(json_decode("\"\u3001\""),  Util::urldecode_rfc3986('%E3%80%81'));
 	}
 	
 	public function testParseParameter() {
