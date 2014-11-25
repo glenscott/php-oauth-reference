@@ -22,9 +22,9 @@ class Token {
    */
   function to_string() {
     return "oauth_token=" .
-           OAuthUtil::urlencode_rfc3986($this->key) .
+           Util::urlencode_rfc3986($this->key) .
            "&oauth_token_secret=" .
-           OAuthUtil::urlencode_rfc3986($this->secret);
+           Util::urlencode_rfc3986($this->secret);
   }
 
   function __toString() {
